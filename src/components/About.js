@@ -27,6 +27,9 @@ export default function About(props) {
     //         setbtnText('Disable Dark Mode');
     //         setbtnColor('btn btn-secondary ');
     //     }
+    const showAlert = () =>{
+        props.showAlert("This feature is disabled for now!","danger");  
+    }
     return (
         <div className="container" style={{backgroundColor : props.mode==='light'?'white':'black', color : props.mode==='light'?'black':'white'}}>
             <h2 className="my-3">About us</h2>
@@ -68,9 +71,9 @@ export default function About(props) {
                     </div>
                 </div>
             </div>
-            {/* <div className="container my-3">
-                <button onClick={toggleStyle} type="button" className={btnColor}>{btnText}</button>
-            </div> */}
+            <div className="container my-3">
+                <button onClick={showAlert} type="button" className="btn btn-outline-primary mx-2">Enable Dark Mode</button>
+            </div>
         </div>
     )
 }
